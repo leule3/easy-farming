@@ -59,7 +59,7 @@ const faqController = {
                         ]
                     }
                 ],
-                system_instruction: {
+                systemInstruction: {
                     parts: [
                         { text: systemInstruction }
                     ]

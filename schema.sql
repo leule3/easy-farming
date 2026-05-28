@@ -123,6 +123,7 @@ CREATE TABLE problem_reports (
     description TEXT NOT NULL,
     location VARCHAR(255),
     severity ENUM('low', 'medium', 'high', 'critical') DEFAULT 'medium',
+    is_prioritized TINYINT(1) DEFAULT 0,
     user_id INT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
