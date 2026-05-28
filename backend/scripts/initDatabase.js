@@ -21,6 +21,10 @@ async function initDb() {
 
         console.log(`Connecting to database and executing ${queries.length} queries...`);
 
+        const connection = await pool.getConnection();
+        console.log('Temporarily disabling foreign key checks...');
+        await connection.query('SET FOREIGN_KEY_CHECKS = 0');
+
         for (let i = 0; i < queries.length; i++) {
             const query = queries[i];
             
@@ -34,8 +38,12 @@ async function initDb() {
             if (!cleanQuery) continue;
 
             console.log(`Executing query ${i + 1}/${queries.length}...`);
-            await pool.query(cleanQuery);
+            await connection.query(cleanQuery);
         }
+
+        console.log('Re-enabling foreign key checks...');
+        await connection.query('SET FOREIGN_KEY_CHECKS = 1');
+        connection.release();
 
         console.log('\n===========================================');
         console.log('✅ DATABASE INITIALIZED SUCCESSFULLY!');
