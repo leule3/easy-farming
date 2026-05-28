@@ -276,7 +276,7 @@ body {
     left: 0;
     bottom: 0;
     overflow-y: auto;
-    z-index: 950;
+    z-index: 999; /* Higher than .sidebar-overlay (998) to keep sidebar sharp & clickable! */
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 4px 0 15px rgba(0, 0, 0, 0.05);
 }
@@ -339,9 +339,9 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    background: rgba(0, 0, 0, 0.25); /* Subtle dark overlay */
+    backdrop-filter: blur(2px);       /* Very clean and elegant 2px blur */
+    -webkit-backdrop-filter: blur(2px);
     z-index: 998;
     animation: fadeIn 0.2s ease-out;
 }
