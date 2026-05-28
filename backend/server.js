@@ -1,6 +1,7 @@
 // Main server file - Entry point
 const express = require('express');
 const cors = require('cors');
+const pool = require('./config/database');
 require('dotenv').config();
 
 const app = express();
@@ -29,17 +30,17 @@ app.get('/api/health', (req, res) => {
 // Error handling middleware
 app.use((err, req, res, next) => {
     console.error(err.stack);
-    res.status(500).json({ 
-        success: false, 
-        message: 'Something went wrong!' 
+    res.status(500).json({
+        success: false,
+        message: 'Something went wrong!'
     });
 });
 
 // 404 handler
 app.use((req, res) => {
-    res.status(404).json({ 
-        success: false, 
-        message: 'Route not found' 
+    res.status(404).json({
+        success: false,
+        message: 'Route not found'
     });
 });
 
