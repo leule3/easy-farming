@@ -36,7 +36,7 @@
 
                 <div class="showcase-card">
                     <div class="showcase-image-wrapper">
-                        <img src="/images/ethiopian_crops1.webp" alt="Traditional Grains" class="showcase-img">
+                        <img src="/images/ethiopian_crops.png" alt="Traditional Grains" class="showcase-img">
                         <span class="showcase-tag">Local Products</span>
                     </div>
                     <div class="showcase-content">
