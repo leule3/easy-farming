@@ -57,6 +57,9 @@
                         >
                             <div class="msg-bubble">
                                 <p>{{ msg.text }}</p>
+                                <div v-if="msg.isProblem" class="auto-alert-badge">
+                                    🚨 Auto-Alert Generated & Prioritized to Super Admin!
+                                </div>
                                 <span class="msg-time">{{ msg.time }}</span>
                             </div>
                         </div>
@@ -165,6 +168,7 @@ export default {
                     this.chatMessages.push({
                         sender: 'bot',
                         text: response.data.reply,
+                        isProblem: response.data.is_problem,
                         time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
                     });
                 } else {
@@ -483,7 +487,26 @@ export default {
 
 @keyframes typing {
     0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
-    40% { transform: scale(1); opacity: 1; }
+}
+
+.auto-alert-badge {
+    background: rgba(214, 40, 40, 0.1);
+    color: var(--danger-color);
+    border: 1px solid rgba(214, 40, 40, 0.25);
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    font-size: 11px;
+    font-weight: 700;
+    margin-top: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(0.98); }
 }
 
 /* Responsive Scaling */
