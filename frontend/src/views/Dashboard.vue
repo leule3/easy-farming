@@ -16,7 +16,7 @@
                     <div class="showcase-image-wrapper">
                         <img src="/images/ethiopian_farmer.png" alt="Ethiopian Farmer" class="showcase-img">
                         <span class="showcase-tag">Community</span>
-                    </div>
+                    </div>  
                     <div class="showcase-content">
                         <h3>Farming Communities</h3>
                         <p>Empowering local smallholders with real-time weather alerts, sustainable crop guidance, and expert collaborative forums to bolster regional agricultural resilience.</p>
@@ -36,7 +36,7 @@
 
                 <div class="showcase-card">
                     <div class="showcase-image-wrapper">
-                        <img src="/images/ethiopian_crops.png" alt="Traditional Grains" class="showcase-img">
+                        <img src="/images/ethiopian_crops1.png" alt="Traditional Grains" class="showcase-img">
                         <span class="showcase-tag">Local Products</span>
                     </div>
                     <div class="showcase-content">
@@ -211,7 +211,7 @@ export default {
 }
 
 .dashboard-header h1 {
-    font-size: 60px;
+    font-size: 30px;
     font-weight: 800;
     margin-bottom: 8px;
     color: white;
