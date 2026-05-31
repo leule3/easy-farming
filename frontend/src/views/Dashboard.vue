@@ -211,7 +211,7 @@ export default {
 }
 
 .dashboard-header h1 {
-    font-size: 32px;
+    font-size: 60px;
     font-weight: 800;
     margin-bottom: 8px;
     color: white;
